@@ -1,0 +1,36 @@
+<div class="tools-section">
+
+  <h2 class="c1 c2">Get Started</h2>
+
+  <div class="tools-cards">
+
+    <div class="tools-card">
+
+      <img src="assets/live.png">
+      <h3 class="c1">AI Live Translator</h3>
+      <p>Use real-time AI to detect and translate sign language through your webcam.</p>
+      <button class="select-button" (click)="startVideo()">Start Live</button>
+      <video #videoFeed autoplay style="width: 0; height: 0;"></video>
+      
+    </div>
+
+    <div class="tools-card">
+
+      <img src="assets/vision.png">
+      <h3 class="c1">AI Vision Translator</h3>
+      <p>Use advanced image processing and AI to translate from captured photos into text.</p>
+      <input type="file" id="fileInput" (change)="handleFileSelection($event)" accept="image/*" multiple>
+      <label for="fileInput" class="select-button-upload">Select Images</label>
+
+      <!-- Separate button to trigger the upload process -->
+      <button class="select-button-upload" (click)="uploadImages()">Upload & Predict</button>
+
+      <p id="finalResult" class="final-sentence"></p> <!-- Display translation -->
+
+
+    </div>
+
+  </div>
+
+  <app-chat-button></app-chat-button>
+</div>

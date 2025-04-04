@@ -1,0 +1,31 @@
+.gestures-section {
+    text-align: center;
+    background: #F9F9F9;
+
+}
+.gestures-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+.gestures-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 7%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.c2 {
+    color: #6301EA;
+    margin: 0;
+    padding: 20px 0;
+}
+.c1 {
+    color: #000000;
+    font-weight: bold;
+    margin: 0;
+}

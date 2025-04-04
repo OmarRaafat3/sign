@@ -1,0 +1,51 @@
+<div class="chat-wrapper">
+  <!-- Chat Button -->
+  <button class="chat-btn" (click)="toggleChat()">
+    <span [ngClass]="{'rotate': isChatOpen}"></span>
+  </button>
+
+  <!-- Chat Input Box (Visible When Button Clicked) -->
+  <div class="chat-box" [class.open]="isChatOpen" @fadeSlide>
+    <input type="text" [(ngModel)]="message" placeholder="Type a message...">
+    <button class="send-btn" (click)="sendMessage()">↑</button>
+  </div>
+</div>
+
+<!-- Custom Modal Popup -->
+<div class="popup-overlay" *ngIf="showPopup">
+  <div class="popup">
+    <h3>Translated Message</h3>
+    <div class="sign-language-display">
+      <ng-container *ngFor="let imgSrc of translatedMessage">
+        <div *ngIf="imgSrc !== 'BREAK_LINE'; else lineBreak">
+          <img [src]="imgSrc" alt="Sign" class="sign-image">
+        </div>
+        <ng-template #lineBreak><div class="new-line"></div></ng-template> <!-- ✅ New line using div -->
+      </ng-container>
+    </div>       
+    <button (click)="closePopup()">Close</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="chat-wrapper">
+  Chat Button
+  <button class="chat-btn" (click)="toggleChat()">
+    <span [ngClass]="{'rotate': isChatOpen}"></span>
+  </button>
+
+  Chat Input Box (Visible When Button Clicked)
+  <div class="chat-box" *ngIf="isChatOpen" @fadeSlide>
+    <input type="text" [(ngModel)]="message" placeholder="Type a message...">
+    <button class="send-btn" (click)="sendMessage()">↑</button>
+  </div>
+</div> -->
